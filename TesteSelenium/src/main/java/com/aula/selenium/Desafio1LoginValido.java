@@ -92,7 +92,10 @@ public class Desafio1LoginValido {
             e.printStackTrace();
             return false;
         }
-
+        finally {
+            System.out.println("\nFechando navegador...");
+            driver.quit();
+        }
 
         return true;
     }

@@ -91,7 +91,10 @@ public class Desafio2LoginInvalido {
             e.printStackTrace();
             return false;
         }
-
+        finally {
+            System.out.println("\nFechando navegador...");
+            driver.quit();
+        }
 
         return true;
     }

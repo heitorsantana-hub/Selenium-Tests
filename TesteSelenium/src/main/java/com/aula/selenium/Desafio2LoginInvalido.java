@@ -21,13 +21,13 @@ import java.time.Duration;
 
 public class Desafio2LoginInvalido {
 
-    public static void main(String[] args) {
+    public static boolean TesteDesafio2(WebDriver driver) {
 
         /**
          * Configuração e inicialização do ChromeDriver
          */
         WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
+        driver = new ChromeDriver();
         System.out.println("Drivers configurados...");
 
         try{
@@ -89,12 +89,11 @@ public class Desafio2LoginInvalido {
         } catch (Exception e) {
             System.out.println("Ocorreu um erro: " + e.getMessage());
             e.printStackTrace();
-        }
-        finally {
-            System.out.println("\nFechando navegador...");
-            driver.quit();
+            return false;
         }
 
+
+        return true;
     }
 
 }
